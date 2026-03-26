@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>내 집 마련 대출 비교표</title>
+<title>내 집 마련 대출 비교표 by. bbibbi_around</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
@@ -358,7 +358,7 @@
 
   <!-- 조건 선택 -->
   <div class="tabs-group">
-    <div class="condition-label">신청자 유형</div>
+    <div class="condition-label"><h3>신청자 유형</h3></div>
     <div class="tabs" id="type-tabs">
       <button class="tab-btn active" onclick="setType('first')">🏠 생애최초</button>
       <button class="tab-btn" onclick="setType('newlywed')">💍 신혼부부</button>
@@ -366,7 +366,7 @@
   </div>
 
   <div class="tabs-group">
-    <div class="condition-label">소득 구간</div>
+    <div class="condition-label"><h3>소득 구간</h3></div>
     <div class="income-tabs" id="income-tabs"></div>
   </div>
 
@@ -375,7 +375,7 @@
 
   <!-- 요약 -->
   <div class="summary">
-    <h3>📌 핵심 원칙</h3>
+    <h4>📌 핵심 원칙</h4>
     <div class="summary-flow">
       <span class="flow-item">① 디딤돌대출</span>
       <span class="flow-arrow">→</span>
@@ -388,6 +388,10 @@
     <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7">
       정책대출을 최우선으로 검토하고, 조건이 안 될 때만 순서대로 내려가세요.<br>
       대출 한도 = <strong style="color:#fff">LTV로 1차 계산</strong> → <strong style="color:#fff">DSR로 2차 조정</strong> → <strong style="color:#fff">방공제로 최종 확정</strong>
+    </p>
+     <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7">
+       최근 토지거래허가지역의 경우 대출 상품과 상관없이 <strong style="color:#fff">실거주의무</strong>가 있습니다.
+       이 부분 꼭 거래 지역 규제를 추가로 확인하세요.
     </p>
     <div class="summary-links">
       <a href="https://enhuf.molit.go.kr" target="_blank">기금e든든 (디딤돌 신청)</a>
@@ -431,7 +435,7 @@ const DATA = {
             { label:'DSR',    val:'정책대출 별도 적용' },
             { label:'자산조건', val:'순자산 5.11억 이하' },
           ],
-          pros:['금리 최저 (정책대출 중 1위)','LTV 80% 혜택 (생애최초)','고정금리로 이자 예측 가능','청약저축 우대 최대 -0.5%p'],
+          pros:['금리 기준 최저 (정책대출 중 1위)','LTV 80% 혜택 (생애최초)','고정금리로 이자 예측 가능','청약저축 우대 최대 -0.5%p'],
           cons:['주택가격 5억 이하 제한','한도 3억 상한','실거주 2년 의무']
         },
         {
