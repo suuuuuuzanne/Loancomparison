@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>내 집 마련 대출 비교표 by. bbibbi_around</title>
+<title>유형 별 대출 비교표 by. bbibbi_around</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
@@ -41,9 +41,9 @@
 
   /* ── Header ── */
   header {
-    background: var(--text-primary);
+    background: #1A1814;
     color: #fff;
-    padding: 48px 24px 40px;
+    padding: 52px 24px 44px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -52,37 +52,52 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 40px,
-      rgba(255,255,255,0.015) 40px,
-      rgba(255,255,255,0.015) 80px
-    );
+    background: linear-gradient(160deg, #242018 0%, #1A1814 50%, #161310 100%);
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 180px;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.04) 0%, transparent 70%);
+    pointer-events: none;
   }
   .header-tag {
+    position: relative;
+    z-index: 1;
     display: inline-block;
     font-size: 11px;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-    border: 1px solid var(--gold);
-    padding: 3px 12px;
-    border-radius: 20px;
-    margin-bottom: 16px;
-    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 20px;
   }
   header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(24px, 5vw, 38px);
+    position: relative;
+    z-index: 1;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: clamp(24px, 5vw, 40px);
     font-weight: 700;
     color: #fff;
-    margin-bottom: 10px;
-    letter-spacing: -0.5px;
+    margin-bottom: 0;
+    letter-spacing: -1px;
+  }
+  .header-divider {
+    position: relative;
+    z-index: 1;
+    width: 32px;
+    height: 1.5px;
+    background: rgba(255,255,255,0.15);
+    margin: 16px auto;
   }
   header p {
-    font-size: 14px;
-    color: rgba(255,255,255,0.55);
-    letter-spacing: 0.03em;
+    position: relative;
+    z-index: 1;
+    font-size: 13px;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.06em;
   }
 
   /* ── Main ── */
@@ -349,16 +364,17 @@
 <body>
 
 <header>
-  <div class="header-tag">내 집 마련 가이드</div>
-  <h1>부동산 대출 비교표</h1>
-  <p>2026년 3월 기준 · 조건별 추천 대출 한눈에 보기</p>
+  <div class="header-tag">ⓒ bbibbi_around</div>
+  <h1>유형 별 대출 비교표</h1>
+  <div class="header-divider"></div>
+  <p>조건별 추천 대출 한눈에 보기</p>
 </header>
 
 <main>
 
   <!-- 조건 선택 -->
   <div class="tabs-group">
-    <div class="condition-label"><h3>신청자 유형</h3></div>
+    <div class="condition-label">신청자 유형</div>
     <div class="tabs" id="type-tabs">
       <button class="tab-btn active" onclick="setType('first')">🏠 생애최초</button>
       <button class="tab-btn" onclick="setType('newlywed')">💍 신혼부부</button>
@@ -366,7 +382,7 @@
   </div>
 
   <div class="tabs-group">
-    <div class="condition-label"><h3>소득 구간</h3></div>
+    <div class="condition-label">소득 구간</div>
     <div class="income-tabs" id="income-tabs"></div>
   </div>
 
@@ -375,7 +391,7 @@
 
   <!-- 요약 -->
   <div class="summary">
-    <h4>📌 핵심 원칙</h4>
+    <h3>📌 핵심 원칙</h3>
     <div class="summary-flow">
       <span class="flow-item">① 디딤돌대출</span>
       <span class="flow-arrow">→</span>
@@ -389,7 +405,7 @@
       정책대출을 최우선으로 검토하고, 조건이 안 될 때만 순서대로 내려가세요.<br>
       대출 한도 = <strong style="color:#fff">LTV로 1차 계산</strong> → <strong style="color:#fff">DSR로 2차 조정</strong> → <strong style="color:#fff">방공제로 최종 확정</strong>
     </p>
-     <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7">
+    <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7">
        ✔️최근 토지거래허가지역의 경우 대출 상품과 상관없이 <strong style="color:#fff">실거주의무</strong>가 있습니다.<br> 
        이 부분 <strong style="color:#fff">꼭</strong> 거래 지역 규제를 추가로 확인하세요.
     </p>
@@ -409,7 +425,8 @@
 
 <footer>
   ⓒ bbibbi_around All right reserved<br>
-  본 자료는 정보 제공 목적이며 금융 투자 조언이 아닙니다.
+  본 자료는 정보 제공 목적이며 금융 투자 조언이 아닙니다.<br>
+  해당 내용을 허가없이 사용할 경우 법적으로 처벌받을 수 있음을 알려드립니다.
 </footer>
 
 <script>
@@ -418,7 +435,7 @@ const DATA = {
     incomes: [
       { key:'u5000', label:'연 5천만원 이하' },
       { key:'u7000', label:'연 7천만원 이하' },
-      { key:'u8500', label:'연 8.5천만원 이하' },
+      { key:'u8500', label:'연 8.5천만원 초과' },
     ],
     loans: {
       u5000: [
@@ -434,9 +451,10 @@ const DATA = {
             { label:'LTV',    val:'최대 80% (생애최초·비수도권)\n수도권 70%', cls:'hi' },
             { label:'DTI',    val:'60% 이내' },
             { label:'DSR',    val:'정책대출 별도 적용' },
+            { label:'방공제', val:'적용 (면제혜택 폐지)\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
             { label:'자산조건', val:'순자산 5.11억 이하' },
           ],
-          pros:['금리 기준 최저 (정책대출 중 1위)','LTV 80% 혜택 (생애최초)','고정금리로 이자 예측 가능','청약저축 우대 최대 -0.5%p'],
+          pros:['금리 최저 (정책대출 중 1위)','LTV 80% 혜택 (생애최초)','고정금리로 이자 예측 가능','청약저축 우대 최대 -0.5%p'],
           cons:['주택가격 5억 이하 제한','한도 3억 상한','실거주 2년 의무']
         },
         {
@@ -448,9 +466,10 @@ const DATA = {
             { label:'소득조건', val:'부부합산 7천만원 이하' },
             { label:'주택조건', val:'6억 이하' },
             { label:'대출한도', val:'최대 4.2억 (생애최초)', cls:'hi' },
-            { label:'LTV',    val:'최대 80% (생애최초)\n수도권 또는 규제지역 70%', cls:'hi' },
+            { label:'LTV',    val:'최대 80% (생애최초)\n수도권 70%', cls:'hi' },
             { label:'DTI',    val:'60% 이내' },
             { label:'DSR',    val:'정책대출 별도 적용' },
+            { label:'방공제', val:'아파트: 미적용\n비아파트 또는 구입자금보증 미가입 시 적용\n(구입자금보증 가입 시 면제 가능)', cls:'' },
             { label:'만기',    val:'최대 50년 선택 가능' },
           ],
           pros:['한도 4.2억 (디딤돌보다 높음)','6억 주택까지 커버','10~50년 만기 선택','LTV 80% 생애최초 혜택'],
@@ -468,6 +487,7 @@ const DATA = {
             { label:'LTV',    val:'최대 70% (생애최초)' },
             { label:'DTI',    val:'60% (실수요자 기준)' },
             { label:'DSR',    val:'40% (스트레스 DSR 포함)', cls:'warn' },
+            { label:'방공제', val:'적용\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
           ],
           pros:['주택가격 제한 없음','소득 조건 없음','한도 최대 6억'],
           cons:['금리 정책대출보다 높음','스트레스 DSR 적용','정책대출 불가 시 차선책']
@@ -484,6 +504,7 @@ const DATA = {
             { label:'LTV',    val:'비규제 70% / 규제 40~50%', cls:'warn' },
             { label:'DTI',    val:'지역별 40~60%' },
             { label:'DSR',    val:'40% (은행권)', cls:'warn' },
+            { label:'방공제', val:'적용\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
           ],
           pros:['조건 가장 자유로움'],
           cons:['생애최초라면 시중은행 생애최초가 유리','금리·LTV 모두 불리','정책 혜택 미활용']
@@ -502,6 +523,7 @@ const DATA = {
             { label:'LTV',    val:'최대 80% (비수도권)\n수도권 70%', cls:'hi' },
             { label:'DTI',    val:'60% 이내' },
             { label:'DSR',    val:'정책대출 별도 적용' },
+            { label:'방공제', val:'적용 (면제혜택 폐지)\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
             { label:'자산조건', val:'순자산 5.11억 이하' },
           ],
           pros:['소득 7천만원까지 가능 (생애최초)','금리 최저','LTV 80% 혜택','고정금리 안정'],
@@ -519,6 +541,7 @@ const DATA = {
             { label:'LTV',    val:'최대 80% (생애최초)' },
             { label:'DTI',    val:'60% 이내' },
             { label:'DSR',    val:'정책대출 별도' },
+            { label:'방공제', val:'아파트: 미적용\n비아파트 또는 구입자금보증 미가입 시 적용\n(구입자금보증 가입 시 면제 가능)', cls:'' },
             { label:'만기',    val:'최대 50년' },
           ],
           pros:['디딤돌 안 될 때 대안','한도 4.2억으로 높음','장기 고정금리 안정'],
@@ -536,6 +559,7 @@ const DATA = {
             { label:'LTV',    val:'최대 70% (생애최초)' },
             { label:'DTI',    val:'60%' },
             { label:'DSR',    val:'40% (스트레스 포함)', cls:'warn' },
+            { label:'방공제', val:'적용\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
           ],
           pros:['주택가격 6억 초과 가능','한도 최대 6억'],
           cons:['금리 높음','정책대출 조건 안될 때만']
@@ -552,6 +576,7 @@ const DATA = {
             { label:'LTV',    val:'비규제 70% / 규제 40~50%', cls:'warn' },
             { label:'DTI',    val:'지역별 40~60%' },
             { label:'DSR',    val:'40%', cls:'warn' },
+            { label:'방공제', val:'적용\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
           ],
           pros:['조건 자유'],
           cons:['생애최초 혜택 미활용','LTV 불리 가능']
@@ -578,6 +603,7 @@ const DATA = {
             { label:'LTV',    val:'최대 80% (생애최초)' },
             { label:'DTI',    val:'60% 이내' },
             { label:'DSR',    val:'정책대출 별도' },
+            { label:'방공제', val:'아파트: 미적용\n비아파트 또는 구입자금보증 미가입 시 적용\n(구입자금보증 가입 시 면제 가능)', cls:'' },
           ],
           pros:['정책대출 중 한도 최대','고정금리 안정'],
           cons:['소득 초과 가능성 금융기관 확인 필요','신혼부부 조건 중복 확인']
@@ -594,6 +620,7 @@ const DATA = {
             { label:'LTV',    val:'최대 70% (생애최초)' },
             { label:'DTI',    val:'60%' },
             { label:'DSR',    val:'40% (스트레스 DSR 포함)', cls:'warn' },
+            { label:'방공제', val:'적용\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
           ],
           pros:['소득·가격 제한 없음','한도 최대 6억','생애최초 LTV 70% 혜택'],
           cons:['금리 가장 높음','스트레스 DSR 적용']
@@ -609,6 +636,7 @@ const DATA = {
             { label:'LTV',    val:'비규제 70% / 규제 40~50%', cls:'warn' },
             { label:'DTI',    val:'지역별 40~60%' },
             { label:'DSR',    val:'40%', cls:'warn' },
+            { label:'방공제', val:'적용\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
           ],
           pros:['조건 자유'],
           cons:['생애최초 LTV 혜택 미활용']
@@ -620,7 +648,7 @@ const DATA = {
     incomes: [
       { key:'u5000', label:'부부합산 5천만원 이하' },
       { key:'u8500', label:'부부합산 8.5천만원 이하' },
-      { key:'u10000', label:'부부합산 1억원 이하' },
+      { key:'u10000', label:'부부합산 1억원 초과' },
     ],
     loans: {
       u5000: [
@@ -636,6 +664,7 @@ const DATA = {
             { label:'LTV',    val:'최대 70%\n비수도권 생애최초+신혼 80%', cls:'hi' },
             { label:'DTI',    val:'60% 이내' },
             { label:'DSR',    val:'정책대출 별도 적용' },
+            { label:'방공제', val:'적용 (면제혜택 폐지)\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
             { label:'금리우대', val:'신혼 -0.2%p + 청약저축 -0.5%p', cls:'hi' },
             { label:'자산조건', val:'순자산 5.11억 이하' },
           ],
@@ -654,6 +683,7 @@ const DATA = {
             { label:'LTV',    val:'최대 70% (신혼)\n생애최초 80%' },
             { label:'DTI',    val:'60% 이내' },
             { label:'DSR',    val:'정책대출 별도' },
+            { label:'방공제', val:'아파트: 미적용\n비아파트 또는 구입자금보증 미가입 시 적용\n(구입자금보증 가입 시 면제 가능)', cls:'' },
             { label:'만기',    val:'최대 50년 (신혼·40세 미만)', cls:'hi' },
           ],
           pros:['50년 만기로 초기 부담 최소화','고정금리 안정적','한도 높음'],
@@ -670,6 +700,7 @@ const DATA = {
             { label:'대출한도', val:'최대 6억' },
             { label:'LTV',    val:'최대 70% (생애최초)' },
             { label:'DSR',    val:'40%', cls:'warn' },
+            { label:'방공제', val:'적용\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
           ],
           pros:['주택가격 자유','소득 제한 없음'],
           cons:['정책대출 먼저 검토 권장','금리 높음']
@@ -684,6 +715,7 @@ const DATA = {
             { label:'주택조건', val:'제한 없음' },
             { label:'LTV',    val:'비규제 70% / 규제 40~50%', cls:'warn' },
             { label:'DSR',    val:'40%', cls:'warn' },
+            { label:'방공제', val:'적용\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
           ],
           pros:['조건 자유'],
           cons:['신혼부부 정책 혜택 미활용','금리·한도 모두 불리']
@@ -702,6 +734,7 @@ const DATA = {
             { label:'LTV',    val:'최대 70%\n비수도권+생애최초 80%', cls:'hi' },
             { label:'DTI',    val:'60% 이내' },
             { label:'DSR',    val:'정책대출 별도' },
+            { label:'방공제', val:'적용 (면제혜택 폐지)\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
             { label:'금리우대', val:'신혼 -0.2%p 포함', cls:'hi' },
             { label:'자산조건', val:'순자산 5.11억 이하' },
           ],
@@ -719,6 +752,7 @@ const DATA = {
             { label:'대출한도', val:'최대 4.2억 (생애최초+신혼)', cls:'hi' },
             { label:'LTV',    val:'최대 70%\n생애최초 80%' },
             { label:'만기',    val:'최대 50년', cls:'hi' },
+            { label:'방공제', val:'아파트: 미적용\n비아파트 또는 구입자금보증 미가입 시 적용\n(구입자금보증 가입 시 면제 가능)', cls:'' },
           ],
           pros:['장기 고정 안정','50년 만기 가능','한도 높음'],
           cons:['금리 디딤돌보다 높음']
@@ -734,6 +768,7 @@ const DATA = {
             { label:'대출한도', val:'최대 6억', cls:'hi' },
             { label:'LTV',    val:'최대 70% (생애최초)' },
             { label:'DSR',    val:'40%', cls:'warn' },
+            { label:'방공제', val:'적용\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
           ],
           pros:['주택가격 자유','한도 최대 6억'],
           cons:['금리 높음','정책대출 먼저 검토']
@@ -748,6 +783,7 @@ const DATA = {
             { label:'주택조건', val:'제한 없음' },
             { label:'LTV',    val:'비규제 70% / 규제 40~50%', cls:'warn' },
             { label:'DSR',    val:'40%', cls:'warn' },
+            { label:'방공제', val:'적용\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
           ],
           pros:['조건 자유'],
           cons:['신혼 특례 미활용','LTV 불리 가능']
@@ -773,6 +809,7 @@ const DATA = {
             { label:'대출한도', val:'3.6억 (기본) · 다자녀 4억' },
             { label:'LTV',    val:'최대 70%' },
             { label:'만기',    val:'최대 50년', cls:'hi' },
+            { label:'방공제', val:'아파트: 미적용\n비아파트 또는 구입자금보증 미가입 시 적용\n(구입자금보증 가입 시 면제 가능)', cls:'' },
           ],
           pros:['자녀 있으면 1억까지 가능','50년 만기 월 부담 최소화','고정금리 안정'],
           cons:['자녀 없으면 이용 어려움','금리 정책대출 중 높은 편']
@@ -789,6 +826,7 @@ const DATA = {
             { label:'LTV',    val:'최대 70% (생애최초)' },
             { label:'DTI',    val:'60%' },
             { label:'DSR',    val:'40% (스트레스 DSR 포함)', cls:'warn' },
+            { label:'방공제', val:'적용\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
           ],
           pros:['소득·가격 제한 없음','한도 최대 6억','생애최초 LTV 70% 혜택'],
           cons:['금리 가장 높음','DSR 40% 제약','스트레스 DSR 적용']
@@ -803,6 +841,7 @@ const DATA = {
             { label:'주택조건', val:'제한 없음' },
             { label:'LTV',    val:'비규제 70% / 규제 40~50%', cls:'warn' },
             { label:'DSR',    val:'40%', cls:'warn' },
+            { label:'방공제', val:'적용\n서울 5,500만 / 수도권과밀 4,800만\n광역시 2,800만 / 기타 2,500만', cls:'warn' },
           ],
           pros:['자유로운 조건'],
           cons:['LTV 규제 그대로','정책 혜택 없음']
