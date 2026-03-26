@@ -1,146 +1,353 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>bbibbi_around 대출 비교표</title>
+<title>내 집 마련 대출 비교표</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #0F1115;
-  --surface: #1A1D24;
-  --surface-2: #222631;
-  --border: #2C313C;
-
-  --text-primary: #F1F3F5;
-  --text-secondary: #AAB0B6;
-  --text-muted: #6B7280;
-
-  --accent: #4DA3FF;
-  --accent-soft: rgba(77,163,255,0.15);
-
-  --green: #4CAF7D;
-  --red: #E57373;
-
-  --radius: 14px;
-  --shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: 'Pretendard', sans-serif;
-  background: linear-gradient(180deg, #0B0D11 0%, #11131A 100%);
-  color: var(--text-primary);
-}
-
-/* 전체 컨테이너 */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 24px 16px 60px;
-}
-
-/* 헤더 */
-header {
-  text-align: center;
-  margin-bottom: 28px;
-}
-
-header h1 {
-  font-size: clamp(28px, 5vw, 42px);
-  font-weight: 800;
-  letter-spacing: -1px;
-}
-
-/* 카드 공통 */
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: var(--shadow);
-  transition: 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
-
-/* 입력 영역 */
-input, select {
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--surface-2);
-  color: var(--text-primary);
-  font-size: 14px;
-}
-
-/* 버튼 */
-button {
-  padding: 12px 16px;
-  border-radius: 10px;
-  border: none;
-  background: var(--accent);
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-button:hover {
-  opacity: 0.9;
-}
-
-/* 결과 박스 */
-.result-box {
-  background: var(--surface-2);
-  border-radius: 12px;
-  padding: 14px;
-  margin-top: 12px;
-}
-
-/* 카드 그리드 */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-/* 강조 */
-.highlight {
-  color: var(--accent);
-  font-weight: 700;
-}
-
-/* 모바일 */
-@media (max-width: 900px) {
-  .cards {
-    grid-template-columns: 1fr;
+  :root {
+    --bg: #F7F5F0;
+    --surface: #FFFFFF;
+    --border: #E8E4DC;
+    --border-dark: #C8C2B4;
+    --text-primary: #1A1814;
+    --text-secondary: #6B6560;
+    --text-muted: #A09A92;
+    --accent: #2C5F8A;
+    --accent-light: #EBF2F8;
+    --accent-mid: #C8DCF0;
+    --green: #2A6B4A;
+    --green-light: #EAF3EE;
+    --amber: #8A5A1A;
+    --amber-light: #FBF3E6;
+    --red: #8A2A2A;
+    --red-light: #FAEAEA;
+    --gold: #C49A28;
+    --radius: 12px;
+    --shadow: 0 2px 16px rgba(0,0,0,0.07);
   }
 
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--text-primary);
+    color: #fff;
+    padding: 48px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.015) 40px,
+      rgba(255,255,255,0.015) 80px
+    );
+  }
+  .header-tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
   header h1 {
-    font-size: 28px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 5vw, 38px);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
   }
-}
+  header p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.03em;
+  }
 
-/* 모바일 hover 제거 */
-@media (hover: none) {
-  .card:hover {
-    transform: none;
+  /* ── Main ── */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px 60px;
   }
-}
+
+  /* ── Condition tabs ── */
+  .condition-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .tabs-group { margin-bottom: 28px; }
+  .tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    padding: 8px 20px;
+    border-radius: 40px;
+    border: 1.5px solid var(--border-dark);
+    background: var(--surface);
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all .2s ease;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .tab-btn.active {
+    background: var(--text-primary);
+    border-color: var(--text-primary);
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .income-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+  .income-btn {
+    padding: 6px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    transition: all .2s;
+    white-space: nowrap;
+  }
+  .income-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .income-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    font-weight: 500;
+  }
+
+  /* ── Cards grid ── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform .2s, box-shadow .2s;
+    position: relative;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.11);
+  }
+  .card.top-pick { border: 2px solid var(--accent); }
+  .card.na { opacity: 0.5; pointer-events: none; }
+
+  .card-head {
+    padding: 18px 18px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    padding: 2px 9px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+  .badge-rec    { background: var(--accent-light); color: var(--accent); }
+  .badge-good   { background: var(--green-light);  color: var(--green); }
+  .badge-gen    { background: #F0EDE8; color: var(--text-secondary); }
+  .badge-warn   { background: var(--red-light); color: var(--red); }
+  .badge-amber  { background: var(--amber-light); color: var(--amber); }
+
+  .card-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+  }
+  .card-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .card-rate {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.5px;
+  }
+  .card-rate small {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  .card-body { padding: 14px 18px; flex: 1; }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 10px;
+    font-size: 13px;
+  }
+  .row:last-child { border-bottom: none; }
+  .row-label { color: var(--text-muted); flex-shrink: 0; font-size: 12px; padding-top: 1px; }
+  .row-val { text-align: right; color: var(--text-primary); font-size: 12px; line-height: 1.5; }
+  .row-val.hi  { color: var(--accent); font-weight: 500; }
+  .row-val.warn{ color: var(--red); }
+  .row-val.na-val { color: var(--text-muted); }
+
+  .card-footer { padding: 12px 18px 16px; }
+  .pros-cons-title { font-size: 11px; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 6px; font-weight: 500; }
+  .pro, .con {
+    font-size: 12px;
+    padding: 2px 0;
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+  .pro { color: var(--green); }
+  .con { color: var(--text-secondary); }
+  .pro::before { content: '✓'; flex-shrink: 0; font-weight: 700; }
+  .con::before { content: '·'; flex-shrink: 0; font-size: 16px; line-height: 1.1; }
+
+  .na-msg {
+    padding: 14px 18px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  /* ── Top pick ribbon ── */
+  .ribbon {
+    position: absolute;
+    top: 0; right: 0;
+    background: var(--accent);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 4px 12px 4px 16px;
+    clip-path: polygon(8px 0%, 100% 0%, 100% 100%, 0% 100%);
+    border-radius: 0 var(--radius) 0 0;
+  }
+
+  /* ── Summary bar ── */
+  .summary {
+    margin-top: 36px;
+    background: var(--text-primary);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    color: #fff;
+  }
+  .summary h3 {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .summary-flow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .flow-item {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+  }
+  .flow-arrow { color: rgba(255,255,255,0.3); font-size: 14px; }
+  .summary-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .summary-links a {
+    font-size: 12px;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(196,154,40,0.4);
+    padding-bottom: 1px;
+    transition: border-color .2s;
+  }
+  .summary-links a:hover { border-color: var(--gold); }
+
+  /* ── Notice ── */
+  .notice {
+    margin-top: 20px;
+    background: var(--amber-light);
+    border: 1px solid #E8CC80;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: var(--amber);
+    line-height: 1.7;
+  }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    padding: 28px;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 600px) {
+    .cards { grid-template-columns: 1fr; }
+    header { padding: 36px 20px 28px; }
+  }
 </style>
 </head>
 <body>
-<div class="container">
+
 <header>
   <div class="header-tag">내 집 마련 가이드</div>
   <h1>부동산 대출 비교표</h1>
@@ -669,6 +876,5 @@ function renderCards() {
 renderIncomeTabs();
 renderCards();
 </script>
-</div>
 </body>
 </html>
