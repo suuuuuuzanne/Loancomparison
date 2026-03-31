@@ -245,9 +245,9 @@
       정책대출을 최우선으로 검토하고, 조건이 안 될 때만 순서대로 내려가세요.<br>
       대출 한도 = <strong style="color:#fff">LTV로 1차 계산</strong> → <strong style="color:#fff">DSR로 2차 조정</strong> → <strong style="color:#fff">방공제로 최종 확정</strong>
     </p>
-    <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7;margin-top:10px">
-      ✔️ 토지거래허가지역의 경우 대출 상품과 관계없이 <strong style="color:#fff">실거주 의무</strong>가 있습니다.<br>
-      거래 지역 규제를 반드시 추가 확인하세요.
+     <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7">
+       ✔️최근 토지거래허가지역의 경우 대출 상품과 상관없이 <strong style="color:#fff">실거주의무</strong>가 있습니다.<br> 
+       이 부분 <strong style="color:#fff">꼭</strong> 거래 지역 규제를 추가로 확인하세요.
     </p>
     <div class="summary-links">
       <a href="https://enhuf.molit.go.kr" target="_blank">기금e든든 (디딤돌 신청)</a>
@@ -295,7 +295,7 @@ const DATA = {
           rows:[
             { label:'소득조건', val:'부부합산 6천만원 이하\n(생애최초 7천만원 이하)', cls:'hi' },
             { label:'주택조건', val:'5억 이하 · 전용 85㎡ 이하' },
-            { label:'대출한도', val:'최대 3억 (생애최초)', cls:'hi' },
+            { label:'대출한도', val:'최대 2.4억 (생애최초)', cls:'hi' },
             { label:'LTV',     val:'최대 80% (생애최초·비수도권)\n수도권 70%', cls:'hi' },
             { label:'DTI',     val:'60% 이내' },
             { label:'DSR',     val:'정책대출 별도 적용' },
@@ -307,12 +307,12 @@ const DATA = {
         },
         {
           name:'보금자리론', sub:'주택금융공사 장기 고정금리',
-          rate:'연 4.35~4.65%', rateNote:'만기 고정금리', rateUp:true,
+          rate:'연 4.35~4.65%', rateNote:'만기 고정금리 ★4월~', rateUp:true,
           badge:'추천', badgeClass:'badge-good', topPick:false,
           rows:[
             { label:'소득조건', val:'부부합산 7천만원 이하' },
             { label:'주택조건', val:'6억 이하' },
-            { label:'대출한도', val:'최대 4.2억 (생애최초)', cls:'hi' },
+            { label:'대출한도', val:'생애최초 4.2억 / 일반·신혼 3.6억', cls:'hi' },
             { label:'LTV',     val:'최대 80% (생애최초)\n수도권·규제지역 70%', cls:'hi' },
             { label:'DTI',     val:'60% 이내' },
             { label:'DSR',     val:'정책대출 별도 적용' },
@@ -320,7 +320,7 @@ const DATA = {
             { label:'만기',    val:'최대 50년 선택 가능' },
           ],
           pros:['한도 4.2억 (디딤돌보다 높음)','6억 주택까지 커버','10~50년 만기 선택','LTV 80% 생애최초 혜택'],
-          cons:['디딤돌보다 금리 높음','⚠️ 4월부터 0.30%p 추가 인상'],
+          cons:['디딤돌보다 금리 높음','⚠️ 4월부터 0.30%p 추가 인상 (1월+4월 누적 +0.55%p)'],
         },
         {
           name:'시중은행 생애최초', sub:'일반 시중은행 (조건 완화)',
@@ -363,7 +363,7 @@ const DATA = {
           rows:[
             { label:'소득조건', val:'생애최초 7천만원 이하 ✓', cls:'hi' },
             { label:'주택조건', val:'5억 이하 · 전용 85㎡ 이하' },
-            { label:'대출한도', val:'최대 3억 (생애최초)', cls:'hi' },
+            { label:'대출한도', val:'최대 2.4억 (생애최초)', cls:'hi' },
             { label:'LTV',     val:'최대 80% (비수도권)\n수도권 70%', cls:'hi' },
             { label:'DTI',     val:'60% 이내' },
             { label:'DSR',     val:'정책대출 별도 적용' },
@@ -375,12 +375,12 @@ const DATA = {
         },
         {
           name:'보금자리론', sub:'주택금융공사 장기 고정금리',
-          rate:'연 4.35~4.65%', rateNote:'만기 고정금리', rateUp:true,
+          rate:'연 4.35~4.65%', rateNote:'만기 고정금리 ★4월~', rateUp:true,
           badge:'추천', badgeClass:'badge-good', topPick:false,
           rows:[
             { label:'소득조건', val:'7천만원 이하 ✓', cls:'hi' },
             { label:'주택조건', val:'6억 이하' },
-            { label:'대출한도', val:'최대 4.2억 (생애최초)', cls:'hi' },
+            { label:'대출한도', val:'생애최초 4.2억 / 일반·신혼 3.6억', cls:'hi' },
             { label:'LTV',     val:'최대 80% (생애최초)' },
             { label:'DTI',     val:'60% 이내' },
             { label:'DSR',     val:'정책대출 별도' },
@@ -433,7 +433,7 @@ const DATA = {
         },
         {
           name:'보금자리론', sub:'소득 초과 여부 확인 필요',
-          rate:'연 4.35~4.65%', rateNote:'만기 고정금리', rateUp:true,
+          rate:'연 4.35~4.65%', rateNote:'만기 고정금리 ★4월~', rateUp:true,
           badge:'조건 확인 필요', badgeClass:'badge-amber', topPick:false,
           rows:[
             { label:'소득조건', val:'기본 7천만원 이하\n→ 8.5천만원 초과 시 이용 어려움', cls:'warn' },
@@ -496,7 +496,7 @@ const DATA = {
           rows:[
             { label:'소득조건', val:'신혼 부부합산 8.5천만원 이하 ✓', cls:'hi' },
             { label:'주택조건', val:'6억 이하 (신혼) · 전용 85㎡ 이하', cls:'hi' },
-            { label:'대출한도', val:'최대 4억 (신혼·2자녀)', cls:'hi' },
+            { label:'대출한도', val:'최대 3.2억 (신혼·2자녀)', cls:'hi' },
             { label:'LTV',     val:'최대 70%\n비수도권 생애최초+신혼 80%', cls:'hi' },
             { label:'DTI',     val:'60% 이내' },
             { label:'DSR',     val:'정책대출 별도 적용' },
@@ -504,17 +504,17 @@ const DATA = {
             { label:'금리우대', val:'신혼 -0.2%p + 청약저축 -0.5%p', cls:'hi' },
             { label:'자산조건', val:'순자산 5.11억 이하' },
           ],
-          pros:['금리 최저 (정책대출)','신혼 주택기준 6억으로 완화','한도 4억 (일반 2.5억 대비 대폭 상향)','우대금리 중복 가능'],
+          pros:['금리 최저 (정책대출)','신혼 주택기준 6억으로 완화','한도 3.2억 (신혼·2자녀, 일반 2.4억)','우대금리 중복 가능'],
           cons:['전용 85㎡ 이하 제한','순자산 조건 확인 필요','실거주 2년 의무'],
         },
         {
           name:'보금자리론 (신혼)', sub:'주택금융공사 장기 고정금리',
-          rate:'연 3.35~4.65%', rateNote:'만기 고정금리', rateUp:true,
+          rate:'연 3.35~4.65%', rateNote:'만기 고정금리 ★4월~', rateUp:true,
           badge:'추천', badgeClass:'badge-good', topPick:false,
           rows:[
             { label:'소득조건', val:'신혼 8.5천만원 이하 ✓\n(일반 기준 7천만원)', cls:'hi' },
             { label:'주택조건', val:'6억 이하' },
-            { label:'대출한도', val:'최대 4.2억 (생애최초+신혼)', cls:'hi' },
+            { label:'대출한도', val:'생애최초 4.2억 / 일반·신혼 3.6억', cls:'hi' },
             { label:'LTV',     val:'최대 70% (신혼)\n생애최초 80%' },
             { label:'DTI',     val:'60% 이내' },
             { label:'DSR',     val:'정책대출 별도' },
@@ -562,7 +562,7 @@ const DATA = {
           rows:[
             { label:'소득조건', val:'신혼 8.5천만원 이하 ✓ (기준 상한)', cls:'hi' },
             { label:'주택조건', val:'6억 이하 (신혼) · 전용 85㎡ 이하' },
-            { label:'대출한도', val:'최대 4억 (신혼)', cls:'hi' },
+            { label:'대출한도', val:'최대 3.2억 (신혼)', cls:'hi' },
             { label:'LTV',     val:'최대 70%\n비수도권+생애최초 80%', cls:'hi' },
             { label:'DTI',     val:'60% 이내' },
             { label:'DSR',     val:'정책대출 별도' },
@@ -575,12 +575,12 @@ const DATA = {
         },
         {
           name:'보금자리론 (신혼)', sub:'주택금융공사 장기 고정금리',
-          rate:'연 3.35~4.65%', rateNote:'만기 고정금리', rateUp:true,
+          rate:'연 3.35~4.65%', rateNote:'만기 고정금리 ★4월~', rateUp:true,
           badge:'추천', badgeClass:'badge-good', topPick:false,
           rows:[
             { label:'소득조건', val:'신혼 8.5천만원 이하 ✓\n(일반 기준 7천만원)', cls:'hi' },
             { label:'주택조건', val:'6억 이하' },
-            { label:'대출한도', val:'최대 4.2억 (생애최초+신혼)', cls:'hi' },
+            { label:'대출한도', val:'생애최초 4.2억 / 일반·신혼 3.6억', cls:'hi' },
             { label:'LTV',     val:'최대 70%\n생애최초 80%' },
             { label:'방공제',  val:BB },
             { label:'만기',    val:'최대 50년', cls:'hi' },
@@ -628,7 +628,7 @@ const DATA = {
         },
         {
           name:'보금자리론 (신혼)', sub:'자녀 있으면 1억원까지 가능',
-          rate:'연 3.35~4.65%', rateNote:'만기 고정금리', rateUp:true,
+          rate:'연 3.35~4.65%', rateNote:'만기 고정금리 ★4월~', rateUp:true,
           badge:'자녀 있으면 가능', badgeClass:'badge-amber', topPick:false,
           rows:[
             { label:'소득조건', val:'1자녀 9천만원 / 다자녀 1억원 ✓', cls:'hi' },
