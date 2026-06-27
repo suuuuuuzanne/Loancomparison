@@ -329,7 +329,7 @@ const DATA = {
       u5000: [
         {
           name:'디딤돌대출', sub:'주택도시기금 정책대출',
-          rate:'연 2.85~4.50%', rateNote:'고정금리 (2026.06 기준)', rateUp:false,
+          rate:'연 2.85~4.15%', rateNote:'고정금리 (2026.06.22 기준)\n지방 소재 주택 -0.2%p', rateUp:false,
           badge:'최우선 추천', badgeClass:'badge-rec', topPick:true,
           rows:[
             { label:'소득조건', val:'부부합산 6천만원 이하\n(생애최초 7천만원 이하)', cls:'hi' },
@@ -341,7 +341,7 @@ const DATA = {
             { label:'방공제',  val:BD, cls:'warn' },
             { label:'자산조건', val:'순자산 5.11억 이하' },
           ],
-          pros:['금리 최저 (정책대출 중 1위)','생애최초 LTV 70% (정책대출 기준)','고정금리로 이자 예측 가능','청약저축 우대 최대 -0.5%p'],
+          pros:['금리 최저 (정책대출 중 1위)','생애최초 LTV 70% 적용','중도상환수수료 2026.12.31까지 면제','청약저축 우대 최대 -0.5%p'],
           cons:['주택가격 5억 이하 제한','한도 2.4억 상한 (생애최초)','실거주 2년 의무'],
         },
         {
@@ -367,14 +367,14 @@ const DATA = {
           rows:[
             { label:'소득조건', val:'부부합산 7천만원 이하\n신혼 8,500만원 / 1자녀 9천만원\n다자녀 1억원 이하' },
             { label:'주택조건', val:'6억 이하' },
-            { label:'대출한도', val:'생애최초 4.2억 / 일반·신혼 3.6억', cls:'hi' },
+            { label:'대출한도', val:'일반 3.6억 / 다자녀·전세사기 4억\n생애최초 4.2억', cls:'hi' },
             { label:'LTV',     val:'최대 70% (지역 무관)\n규제지역 10%p 추가 차감', cls:'hi' },
             { label:'DTI',     val:'60% 이내' },
             { label:'DSR',     val:'정책대출 별도 적용' },
             { label:'방공제',  val:BB },
             { label:'만기',    val:'최대 50년 선택 가능' },
           ],
-          pros:['한도 4.2억 (디딤돌보다 높음)','6억 주택까지 커버','10~50년 만기 선택','생애최초 LTV 70% 적용'],
+          pros:['일반 3.6억·생애최초 4.2억','6억 주택까지 커버','DSR 미적용 · DTI 60% 기준','10~50년 만기 선택'],
           cons:['디딤돌보다 금리 높음','⚠️ 누적 +0.55%p 인상 · 6월 동결 (4.60~4.90%)'],
         },
         {
@@ -385,7 +385,7 @@ const DATA = {
             { label:'소득조건', val:'제한 없음' },
             { label:'주택조건', val:'6억 초과도 가능', cls:'hi' },
             { label:'대출한도', val:'최대 6억 (LTV 기준)', cls:'hi' },
-            { label:'LTV',     val:'최대 70% (생애최초)' },
+            { label:'LTV',     val:'최대 70% (생애최초)\n수도권·규제지역 포함 동일' },
             { label:'DTI',     val:'60% (실수요자 기준)' },
             { label:'DSR',     val:'40% (스트레스 DSR 포함)', cls:'warn' },
             { label:'방공제',  val:BK, cls:'warn' },
@@ -413,7 +413,7 @@ const DATA = {
       u7000: [
         {
           name:'디딤돌대출', sub:'주택도시기금 정책대출',
-          rate:'연 2.85~4.50%', rateNote:'고정금리 (2026.06 기준)', rateUp:false,
+          rate:'연 2.85~4.15%', rateNote:'고정금리 (2026.06.22 기준)\n지방 소재 주택 -0.2%p', rateUp:false,
           badge:'최우선 추천', badgeClass:'badge-rec', topPick:true,
           rows:[
             { label:'소득조건', val:'생애최초 7천만원 이하 ✓', cls:'hi' },
@@ -435,7 +435,7 @@ const DATA = {
           rows:[
             { label:'소득조건', val:'7천만원 이하 ✓', cls:'hi' },
             { label:'주택조건', val:'6억 이하' },
-            { label:'대출한도', val:'생애최초 4.2억 / 일반·신혼 3.6억', cls:'hi' },
+            { label:'대출한도', val:'일반 3.6억 / 다자녀·전세사기 4억\n생애최초 4.2억', cls:'hi' },
             { label:'LTV',     val:'최대 70% (아파트 기준)' },
             { label:'DTI',     val:'60% 이내' },
             { label:'DSR',     val:'정책대출 별도' },
@@ -453,7 +453,7 @@ const DATA = {
             { label:'소득조건', val:'제한 없음' },
             { label:'주택조건', val:'6억 초과 가능', cls:'hi' },
             { label:'대출한도', val:'최대 6억' },
-            { label:'LTV',     val:'최대 70% (생애최초)' },
+            { label:'LTV',     val:'최대 70% (생애최초)\n수도권·규제지역 포함 동일' },
             { label:'DTI',     val:'60%' },
             { label:'DSR',     val:'40% (스트레스 포함)', cls:'warn' },
             { label:'방공제',  val:BK, cls:'warn' },
@@ -493,7 +493,7 @@ const DATA = {
           rows:[
             { label:'소득조건', val:'기본 7천만원 이하\n→ 8.5천만원 초과 시 이용 어려움', cls:'warn' },
             { label:'주택조건', val:'6억 이하' },
-            { label:'대출한도', val:'생애최초 4.2억 / 일반·신혼 3.6억' },
+            { label:'대출한도', val:'일반 3.6억 / 다자녀·전세사기 4억\n생애최초 4.2억' },
             { label:'LTV',     val:'최대 70% (아파트 기준)' },
             { label:'DTI',     val:'60% 이내' },
             { label:'DSR',     val:'정책대출 별도' },
@@ -510,7 +510,7 @@ const DATA = {
             { label:'소득조건', val:'제한 없음 ✓', cls:'hi' },
             { label:'주택조건', val:'가격 제한 없음 ✓', cls:'hi' },
             { label:'대출한도', val:'최대 6억 (LTV 기준)', cls:'hi' },
-            { label:'LTV',     val:'최대 70% (생애최초)' },
+            { label:'LTV',     val:'최대 70% (생애최초)\n수도권·규제지역 포함 동일' },
             { label:'DTI',     val:'60%' },
             { label:'DSR',     val:'40% (스트레스 DSR 포함)', cls:'warn' },
             { label:'방공제',  val:BK, cls:'warn' },
@@ -569,7 +569,7 @@ const DATA = {
           rows:[
             { label:'소득조건', val:'신혼 8.5천만원 이하 ✓\n(일반 기준 7천만원)', cls:'hi' },
             { label:'주택조건', val:'6억 이하' },
-            { label:'대출한도', val:'생애최초 4.2억 / 일반·신혼 3.6억', cls:'hi' },
+            { label:'대출한도', val:'일반 3.6억 / 다자녀·전세사기 4억\n생애최초 4.2억', cls:'hi' },
             { label:'LTV',     val:'최대 70% (지역 무관·아파트 기준)' },
             { label:'DTI',     val:'60% 이내' },
             { label:'DSR',     val:'정책대출 별도' },
@@ -587,7 +587,7 @@ const DATA = {
             { label:'소득조건', val:'제한 없음' },
             { label:'주택조건', val:'6억 초과 가능' },
             { label:'대출한도', val:'최대 6억' },
-            { label:'LTV',     val:'최대 70% (생애최초)' },
+            { label:'LTV',     val:'최대 70% (생애최초)\n수도권·규제지역 포함 동일' },
             { label:'DSR',     val:'40%', cls:'warn' },
             { label:'방공제',  val:BK, cls:'warn' },
           ],
@@ -635,7 +635,7 @@ const DATA = {
           rows:[
             { label:'소득조건', val:'신혼 8.5천만원 이하 ✓\n(일반 기준 7천만원)', cls:'hi' },
             { label:'주택조건', val:'6억 이하' },
-            { label:'대출한도', val:'생애최초 4.2억 / 일반·신혼 3.6억', cls:'hi' },
+            { label:'대출한도', val:'일반 3.6억 / 다자녀·전세사기 4억\n생애최초 4.2억', cls:'hi' },
             { label:'LTV',     val:'최대 70% (지역 무관·아파트 기준)' },
             { label:'방공제',  val:BB },
             { label:'만기',    val:'최대 50년', cls:'hi' },
@@ -651,7 +651,7 @@ const DATA = {
             { label:'소득조건', val:'제한 없음' },
             { label:'주택조건', val:'6억 초과 가능 ✓', cls:'hi' },
             { label:'대출한도', val:'최대 6억', cls:'hi' },
-            { label:'LTV',     val:'최대 70% (생애최초)' },
+            { label:'LTV',     val:'최대 70% (생애최초)\n수도권·규제지역 포함 동일' },
             { label:'DSR',     val:'40%', cls:'warn' },
             { label:'방공제',  val:BK, cls:'warn' },
           ],
@@ -688,7 +688,7 @@ const DATA = {
           rows:[
             { label:'소득조건', val:'1자녀 9천만원 / 다자녀 1억원 ✓', cls:'hi' },
             { label:'주택조건', val:'6억 이하' },
-            { label:'대출한도', val:'3.6억 (기본) · 다자녀 4억' },
+            { label:'대출한도', val:'일반 3.6억 / 다자녀·전세사기 4억\n생애최초 4.2억' },
             { label:'LTV',     val:'최대 70%' },
             { label:'방공제',  val:BB },
             { label:'만기',    val:'최대 50년', cls:'hi' },
@@ -704,7 +704,7 @@ const DATA = {
             { label:'소득조건', val:'제한 없음 ✓', cls:'hi' },
             { label:'주택조건', val:'가격 제한 없음 ✓', cls:'hi' },
             { label:'대출한도', val:'최대 6억 (LTV 기준)', cls:'hi' },
-            { label:'LTV',     val:'최대 70% (생애최초)' },
+            { label:'LTV',     val:'최대 70% (생애최초)\n수도권·규제지역 포함 동일' },
             { label:'DTI',     val:'60%' },
             { label:'DSR',     val:'40% (스트레스 DSR 포함)', cls:'warn' },
             { label:'방공제',  val:BK, cls:'warn' },
